@@ -1,19 +1,45 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Fund Me App</title>
-  </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fund Me App</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
 
-  <body>
-    <button id="connectButton">Connect</button>
-    <button id="balanceButton">getBalance</button>
-    <button id="withdrawButton">Withdraw</button>
-    <!-- <form> -->
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">Fund Me 🚀</div>
+      <div class="navbar-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>Crowdfunding Platform</h1>
+
+    <!-- Your existing content goes here -->
+
+    <button id="connectButton" class="btn">Connect</button>
+    <button id="balanceButton" class="btn">Get Balance</button>
+    <button id="withdrawButton" class="btn">Withdraw</button>
+
     <label for="ethAmount">ETH Amount</label>
-    <input id="ethAmount" placeholder="0.1" />
-    <button type="button" id="fundButton" > Fund </button>
-    <!-- </form> -->
-  </body>
+    <input id="ethAmount" placeholder="0.1" class="input" />
+    <button type="button" id="fundButton" class="btn">Fund 💰</button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Created by Sivaji</p>
+  </footer>
 
   <script src="./index.js" type="module"></script>
+</body>
 </html>
