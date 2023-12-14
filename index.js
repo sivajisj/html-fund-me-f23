@@ -5,10 +5,12 @@ const connectButton = document.getElementById("connectButton")
 const withdrawButton = document.getElementById("withdrawButton")
 const fundButton = document.getElementById("fundButton")
 const balanceButton = document.getElementById("balanceButton")
+const AccountNumber = document.getElementById("acc")
 connectButton.onclick = connect
 withdrawButton.onclick = withdraw
 fundButton.onclick = fund
 balanceButton.onclick = getBalance
+AccountNumber.innerHTML = "Account Number: 0x00000000"
 
 async function connect() {
   if (typeof window.ethereum !== "undefined") {
@@ -20,9 +22,18 @@ async function connect() {
     connectButton.innerHTML = "Connected"
     const accounts = await ethereum.request({ method: "eth_accounts" })
     console.log(accounts)
+       // Check if there are any accounts available
+       if (accounts.length > 0) {
+        // Display the first account's number
+        AccountNumber.innerHTML = `Account Number: ${accounts[0]}`;
+      } else {
+        // Handle the case where no accounts are available
+        AccountNumber.innerHTML = "No accounts available";
+      }
   } else {
     connectButton.innerHTML = "Please install MetaMask"
   }
+ 
 }
 
 async function withdraw() {
